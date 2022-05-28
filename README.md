@@ -18,10 +18,12 @@ A cross-platform pomodoro timer desktop app.
 [ ] - design settings UI
 [ ] - design icons (as .svg files)
 [ ] - design timer digits
-[ ] - create audio alerts
+[ ] - create audio alert sounds
 [ ] - implement settings
+[ ] - implement settings confirmation pop-up
 [ ] - implement start
 [ ] - implement pause
 [ ] - implement restart
 [ ] - implement audio alerts
+[ ] - implement mute/unmute
 ```
