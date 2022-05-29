@@ -14,9 +14,8 @@ A cross-platform pomodoro timer desktop app.
 
 ## to-do
 ```
-[ ] - design timer UI
+[x] - design timer UI
 [ ] - design settings UI
-[ ] - design icons (as .svg files)
 [ ] - design timer digits
 [ ] - create audio alert sounds
 [ ] - implement settings
