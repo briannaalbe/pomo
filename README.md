@@ -1,6 +1,6 @@
 # pomo
 ```
-A cross-platform pomodoro timer desktop app.
+A cross-platform pomodoro timer terminal app.
 ```
 
 ## features
