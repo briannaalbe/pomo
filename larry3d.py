@@ -1,5 +1,3 @@
-import os
-
 # https://ascii-generator.site/
 # larry3d
 #    _        ___        __      __ __       ______      ____    
@@ -19,12 +17,6 @@ import os
 #
 # Code for cursor position manipulation is derived from:
 # https://rosettacode.org/wiki/Terminal_control/Cursor_positioning#Python
-
-def move (x, y):
-    print("\033[%d;%dHtest" % (y, x))
-
-def clearTerm():
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 def print0(x, y):
     print("\033[%d;%dH    __      " % (y, x))

@@ -1,4 +1,6 @@
 import larry3d
+import settings
+import term
 
 DIGIT1_X = 0
 DIGIT2_X = 13
@@ -34,7 +36,7 @@ def prompt():
     elif ((command == "u") or (command == "unmute")) and muted:
         unmute()
     elif (command == "s") or (command == "settings"):
-        settings()
+        userSettings()
 
 def go():
     print("go")
@@ -53,15 +55,16 @@ def unmute():
     print("unmute")
     muted = False
 
-def settings():
-    print("settings")
+def userSettings():
+    settings.printSettings()
 
-larry3d.clearTerm()
+term.clearTerm()
 
-larry3d.print2(DIGIT1_X, DIGIT_Y)
-larry3d.print5(DIGIT2_X, DIGIT_Y)
-larry3d.printColon(COLON_X, COLON_Y)
-larry3d.print0(DIGIT3_X, DIGIT_Y)
-larry3d.print0(DIGIT4_X, DIGIT_Y)
+#larry3d.print2(DIGIT1_X, DIGIT_Y)
+#larry3d.print5(DIGIT2_X, DIGIT_Y)
+#larry3d.printColon(COLON_X, COLON_Y)
+#larry3d.print0(DIGIT3_X, DIGIT_Y)
+#larry3d.print0(DIGIT4_X, DIGIT_Y)
 
-prompt()
+settings.test()
+#prompt()
