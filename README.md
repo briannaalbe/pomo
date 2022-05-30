@@ -15,7 +15,7 @@ A cross-platform pomodoro timer terminal app.
 ## to-do
 ```
 [x] - design timer UI
-[ ] - design settings UI
+[x] - design settings UI
 [ ] - design timer digits
 [ ] - create audio alert sounds
 [ ] - implement settings
