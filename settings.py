@@ -19,14 +19,14 @@ LINE_INDICATOR_X        = 2
 
 # Intervals line constants
 INTERVALS_25_5_X        = 32
-INTERVALS_50_10_x       = 39
+INTERVALS_50_10_X       = 39
 INTERVALS_Y             = 2
 
 # Cycles line constants
 CYCLES_Y                = 4
 
 # Done nevermind line constants
-DONE_NVM_INDICATOR_Y = 6
+DONE_NVM_INDICATOR_Y    = 6
 
 #
 #

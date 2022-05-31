@@ -1,6 +1,8 @@
+from turtle import delay
 import larry3d
 import settings
 import term
+import time
 
 # Pomo display example
 #############################################################
@@ -37,8 +39,27 @@ PROMPT_Y = 9
 # Fonts
 fonts = {"larry3d", "chunky"}
 
-# Muted status
+# Globals
 muted = False
+minutes = 25
+seconds = 0
+
+#
+#
+def printMinutes(mins):
+    if (mins > 99) or (mins < 0):
+        print("Invalid minutes value")
+
+    minsTensDigit = int(mins / 10)
+    minsOnesDigit = mins % 10
+
+    larry3d.printDigit(minsTensDigit, DIGIT1_X, DIGIT_Y)
+    larry3d.printDigit(minsOnesDigit, DIGIT2_X, DIGIT_Y)
+    larry3d.printColon(COLON_X, COLON_Y)
+
+#
+#
+# Write a printSeconds
 
 #
 #
@@ -67,7 +88,8 @@ def prompt():
 #
 #
 def go():
-    print("go")
+    while (minutes > 0) and (seconds > 0):
+        time.sleep(1)
 
 #
 #
@@ -96,12 +118,7 @@ def unmute():
 def userSettings():
     settings.printSettings()
 
-term.clearTerm()
+term.clearTerm() 
 
-larry3d.print2(DIGIT1_X, DIGIT_Y)
-larry3d.print5(DIGIT2_X, DIGIT_Y)
-larry3d.printColon(COLON_X, COLON_Y)
-larry3d.print0(DIGIT3_X, DIGIT_Y)
-larry3d.print0(DIGIT4_X, DIGIT_Y)
-
+printMinutes(minutes)
 prompt()

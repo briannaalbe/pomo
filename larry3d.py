@@ -18,6 +18,29 @@
 # Code for cursor position manipulation is derived from:
 # https://rosettacode.org/wiki/Terminal_control/Cursor_positioning#Python
 
+
+def printDigit(value, x, y):
+    if   value == 0:
+        print0(x, y)
+    elif value == 1:
+        print1(x, y)
+    elif value == 2:
+        print2(x, y)
+    elif value == 3:
+        print3(x, y)
+    elif value == 4:
+        print4(x, y)
+    elif value == 5:
+        print5(x, y)
+    elif value == 6:
+        print6(x, y)
+    elif value == 7:
+        print7(x, y)
+    elif value == 8:
+        print8(x, y)
+    elif value == 9:
+        print9(x, y)
+        
 def print0(x, y):
     print("\033[%d;%dH    __      "   % (y, x))
     print("\033[%d;%dH  /'__`\    "   % (y + 1, x))
