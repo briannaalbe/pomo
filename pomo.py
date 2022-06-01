@@ -1,4 +1,3 @@
-from turtle import delay
 import larry3d
 import settings
 import term
@@ -41,6 +40,7 @@ fonts = {"larry3d", "chunky"}
 
 # Globals
 muted = False
+pause = False
 minutes = 25
 seconds = 0
 
@@ -59,6 +59,18 @@ def printMinutes(mins):
 
 #
 #
+def printSeconds(secs):
+    if (secs > 99) or (secs < 0):
+        print("Invalid seconds value")
+
+    secsTensDigit = int(secs / 10)
+    secsOnesDigit = secs % 10
+
+    larry3d.printDigit(secsTensDigit, DIGIT3_X, DIGIT_Y)
+    larry3d.printDigit(secsOnesDigit, DIGIT4_X, DIGIT_Y)
+
+#
+#
 # Write a printSeconds
 
 #
@@ -73,7 +85,7 @@ def prompt():
     command = input("    > ")
     command = command.lower()
     if (command == "g") or (command == "go"):
-        go()
+        go(minutes, seconds)
     elif (command == "p") or (command == "pause"):
         pause()
     elif (command == "r") or (command == "restart"):
@@ -87,9 +99,20 @@ def prompt():
 
 #
 #
-def go():
-    while (minutes > 0) and (seconds > 0):
+def go(mins, secs):
+    while (mins > 0) or (secs > 0):        
         time.sleep(1)
+
+        if secs == 0:
+            secs = 59
+            mins -= 1
+            printMinutes(mins)
+        else:
+            secs -= 1
+        printSeconds(secs)
+
+        if pause:
+            pause()
 
 #
 #
@@ -121,4 +144,5 @@ def userSettings():
 term.clearTerm() 
 
 printMinutes(minutes)
+printSeconds(seconds)
 prompt()
