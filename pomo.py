@@ -2,6 +2,7 @@ import larry3d
 import settings
 import term
 import time
+import datetime
 
 # Pomo display example
 #############################################################
@@ -89,7 +90,7 @@ def prompt():
     elif (command == "p") or (command == "pause"):
         pause()
     elif (command == "r") or (command == "restart"):
-        restart()
+        restart()SSSSSSSS
     elif ((command == "m") or (command == "mute")) and not muted:
         mute()
     elif ((command == "u") or (command == "unmute")) and muted:
@@ -100,8 +101,14 @@ def prompt():
 #
 #
 def go(mins, secs):
+    # Code to improve timer accuracy was taken from:
+    # https://codereview.stackexchange.com/questions/199743/countdown-timer-in-python
+    oneSecond = datetime.timedelta(seconds=1)
+    target = datetime.datetime.now()
     while (mins > 0) or (secs > 0):        
-        time.sleep(1)
+        #time.sleep(1)
+        target += oneSecond
+        time.sleep((target - datetime.datetime.now()).total_seconds())
 
         if secs == 0:
             secs = 59
@@ -141,8 +148,10 @@ def unmute():
 def userSettings():
     settings.printSettings()
 
-term.clearTerm() 
-
-printMinutes(minutes)
-printSeconds(seconds)
-prompt()
+#
+#
+if __name__ == '__main__':
+    term.clearTerm() 
+    printMinutes(minutes)
+    printSeconds(seconds)
+    prompt()
