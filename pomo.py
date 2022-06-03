@@ -90,7 +90,7 @@ def prompt():
     elif (command == "p") or (command == "pause"):
         pause()
     elif (command == "r") or (command == "restart"):
-        restart()SSSSSSSS
+        restart()
     elif ((command == "m") or (command == "mute")) and not muted:
         mute()
     elif ((command == "u") or (command == "unmute")) and muted:
